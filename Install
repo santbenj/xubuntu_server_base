@@ -17,7 +17,7 @@ if [[ $EUID -ne 0 ]]; then
   done< txt/repertoire.txt
 
   sudo ./script/install_begin
-  sudo rm -R ../xubuntu_server_base/
+  
     echo -ne "
 -------------------------------------------------------------------------
                     Wait until the reboot ...

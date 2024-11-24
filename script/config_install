@@ -42,3 +42,4 @@ apt clean
 apt autoremove -y 
 apt purge ~c -y 
 
+rm -R ../xubuntu_server_base/
