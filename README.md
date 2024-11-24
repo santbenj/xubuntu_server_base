@@ -5,7 +5,12 @@ Vous pouvez modifier et ajouter d'autre programmes aux besoins et après avoir m
 
 # Installation 
 
-Lancez la commande dans le terminal:
+Lancez ces commandes dans le terminal :
+```
+cd xubuntu_server_base
+sudo chmod +x -R *
+```
+puis
 ```
 ./Install
 ```
