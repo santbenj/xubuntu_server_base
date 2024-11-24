@@ -12,7 +12,7 @@ Lancez la commande dans le terminal:
 
 Voci une liste des thèmes installées :
 
-Curseur = oreo_spark_lime_cursors venant de (https://github.com/milkmadedev/oreo-cursors-compiled) 
+Curseur = oreo_spark_lite_cursors venant de (https://github.com/milkmadedev/oreo-cursors-compiled) 
 
 Thème d'icone = Tela-red venant de (https://github.com/vinceliuice/Tela-icon-theme.git)
 
