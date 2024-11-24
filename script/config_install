@@ -1,0 +1,44 @@
+#!/bin/bash
+
+util=$(getent passwd "1000"|cut -d: -f1)
+
+systemctl mask suspend.target hibernate.target
+
+#modif /etc/environment 
+rm /etc/environment 
+
+chown root:root config/environment
+chmod 644 config/environment
+mv config/environment /etc/environment
+
+# modif networking 
+rm /etc/netplan/50-cloud-init.yaml
+
+chown root:root config/01-network-manager-all.yaml
+chmod 600 config/01-network-manager-all.yaml
+mv config/01-network-manager-all.yaml /etc/netplan/01-network-manager-all.yaml
+
+# nosnap config
+chown root:root config/nosnap
+chmod 644 config/nosnap
+mv config/nosnap /etc/apt/preferences.d/nosnap 
+
+#lightdm gtk config
+chown root:root config/lightdm-gtk-greeter.conf
+chmod 644 config/lightdm-gtk-greeter.conf
+rm /etc/lightdm/lightdm-gtk-greeter.conf
+mv config/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+
+#disable networkd cause we're using NetworkManager
+systemctl stop systemd-networkd.socket 
+systemctl disable systemd-networkd.socket 
+
+systemctl stop systemd-networkd.service
+systemctl disable systemd-networkd.service
+
+#Cleaning packages 
+apt autoclean
+apt clean
+apt autoremove -y 
+apt purge ~c -y 
+

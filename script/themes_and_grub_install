@@ -1,0 +1,15 @@
+#!/bin/bash
+
+git clone https://github.com/vinceliuice/Qogir-theme.git
+git clone https://github.com/vinceliuice/Tela-icon-theme.git
+git clone https://github.com/milkmadedev/oreo-cursors-compiled
+
+mkdir /usr/share/themes
+mkdir /usr/share/icons 
+
+# Installation of oreo spark cursor 
+chown -R root:root oreo-cursors-compiled/oreo_spark_lite_cursors/ 
+mv oreo-cursors-compiled/oreo_spark_lite_cursors/ /usr/share/icons/ 
+
+./Qogir-theme/install.sh -c dark -d /usr/share/themes/
+./Tela-icon-theme/install.sh -d /usr/share/icons/

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null 
+
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+
+sudo mv config/mozilla /etc/apt/preferences.d/mozilla 
+
+apt update -y && apt upgrade -y 
+
+while read line 
+  do
+  apt_pack+=" "$line
+  done< txt/apt.txt
+
+apt install ${apt_pack} -y
+
+apt update -y
+
+apt autoremove snapd -y
+
+apt install -f 
