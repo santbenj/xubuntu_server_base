@@ -22,6 +22,12 @@ mv config/01-network-manager-all.yaml /etc/netplan/01-network-manager-all.yaml
 chown root:root config/nosnap
 chmod 644 config/nosnap
 mv config/nosnap /etc/apt/preferences.d/nosnap 
+# Lightdm numlockx 
+rm /etc/lightdm/lightdm.conf
+mv config/lightdm.conf /etc/lightdm/lightdm.conf
+
+chown root:root config/lightdm.conf 
+chmod 644 config/lightdm.conf 
 
 #lightdm gtk config
 chown root:root config/lightdm-gtk-greeter.conf

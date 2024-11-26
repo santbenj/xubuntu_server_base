@@ -26,3 +26,4 @@ dkms
 neofetch
 curl
 lightdm-gtk-greeter-settings
+
