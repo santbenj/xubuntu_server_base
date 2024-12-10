@@ -22,7 +22,8 @@ Ensuite, lancez le script d'installation :
 ```
 ./Install
 ```
-Thèmes installés
+
+## Thèmes installés
 
 Voici une liste des thèmes installés :
 
@@ -30,7 +31,7 @@ Voici une liste des thèmes installés :
     Thème d'icônes : Tela-red (provenant de GitHub)
     Thème GTK : Qogir-Dark (provenant de GitHub)
 
-Remarques
+## Remarques
 
 N'hésitez pas à modifier le script pour l'adapter à vos besoins spécifiques. Pour toute question ou suggestion, veuillez ouvrir une issue sur ce dépôt.
 
